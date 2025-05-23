@@ -12,19 +12,21 @@ public class herding {
 		int c1 = sc.nextInt();
 		int c2 = sc.nextInt();
 		int c3 = sc.nextInt();
-		int dif1 = c2-c1;
-		int dif2=c3-c2;
+		int dif1 = c2-c1; // Distance between first and second cow
+		int dif2=c3-c2;   // Distance between second and third cow
 		int min=0;
 		int biggestDif = Math.max(dif1,dif2);
-		int max = biggestDif-1;
+		int max = biggestDif-1; // Maximum moves needed
+
+		// Determine minimum moves needed
 		if(dif1 == 1 && dif2 == 1){
-			min = 0;
+			min = 0; // Already consecutive
 		}
 		else if(dif1==2||dif2==2){
-			min = 1;
+			min = 1; // One move needed if there's a gap of 2
 		}
 		else{
-			min = 2;
+			min = 2; // Otherwise, two moves needed
 		}
 
 		pw.println(min);

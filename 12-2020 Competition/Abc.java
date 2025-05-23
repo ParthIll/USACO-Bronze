@@ -5,13 +5,11 @@ import java.util.*;
 
 public class Abc {
 	public static void main(String[] args) throws IOException {
-		//BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
-		//PrintWriter pw = new PrintWriter(System.out);
-		
-
+		// Scanner to read input from standard input
 		Scanner input = new Scanner(System.in);
 		ArrayList<Integer> nums= new ArrayList<Integer>();	
 
+		// Read 7 integers from input
 		int a = input.nextInt();
 		int b = input.nextInt();
 		int c = input.nextInt();
@@ -20,6 +18,7 @@ public class Abc {
 		int f = input.nextInt();
 		int g = input.nextInt();
 	
+		// Add all numbers to the list
 		nums.add(a);
 		nums.add(b);
 		nums.add(c);
@@ -28,6 +27,7 @@ public class Abc {
 		nums.add(f);
 		nums.add(g);
 
+		// Find the smallest number (trueA)
 		int trueA=Integer.MAX_VALUE;
 		int trueB=Integer.MAX_VALUE;
 		int trueC=Integer.MIN_VALUE;
@@ -40,21 +40,27 @@ public class Abc {
 			}
 		}
 		
+		// Remove the smallest number from the list
 		nums.remove(index);
 
+		// Find the next smallest number (trueB)
 		for(int i = 0; i< nums.size(); i++){
 			if(nums.get(i) < trueB){
 				trueB = nums.get(i);
 			}
 		}
 		
+		// Find the largest number (trueC)
 		for(int i = 0; i< nums.size(); i++){
 			if(nums.get(i) > trueC){
 				trueC = nums.get(i);
 			}
 		}
 
+		// Calculate the third original number
 		trueC = trueC-(trueA+trueB);
+
+		// Output the three original numbers
 		PrintWriter pw = new PrintWriter(System.out);
 		pw.print(trueA + " ");
 		pw.print(trueB + " ");

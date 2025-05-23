@@ -1,6 +1,6 @@
 # Bronze Java Files
 
-This repository contains Java source files and solutions for Bronze-level programming problems.
+This repository contains Java source files and solutions for USACO Bronze-level programming problems.
 
 
 ## Structure

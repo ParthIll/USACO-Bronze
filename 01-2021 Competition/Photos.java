@@ -17,7 +17,7 @@ public class Photos {
             }
         }
 
-        // Adjust the number of odd and even counts
+        // Adjust the number of odd and even counts to maximize pairs
         while (O > E) {
             O -= 2;
             E++;
@@ -26,7 +26,7 @@ public class Photos {
             E = O + 1;
         }
 
-        // Output the result
+        // Output the result: maximum number of photos
         System.out.println(E + O);
 
         scanner.close();

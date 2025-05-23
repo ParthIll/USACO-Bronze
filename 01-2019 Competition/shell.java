@@ -7,32 +7,31 @@ import java.util.*;
 public class shell {
 	public static void main(String[] args) throws IOException {
 
+		// Initialize the cups, cup 1 has the pebble at the start
 		int[] cups = {1, 2, 3};
 
-		/*BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
-		PrintWriter pw = new PrintWriter(System.out);
-
-		StringTokenizer st = new StringTokenizer(r.readLine());
-		int swaps = Integer.parseInt(st.nextToken());
-		pw.println();
-		int a = Integer.parseInt(st.nextToken());
-		int b = Integer.parseInt(st.nextToken());
-		int g = Integer.parseInt(st.nextToken());*/
+		// Scanner to read input from "shell.in"
 		Scanner sigma = new Scanner(new File("shell.in"));
 		System.out.println("");
-		int swaps = sigma.nextInt();
+		int swaps = sigma.nextInt(); // Number of swap/guess operations
 
+		// Counters for correct guesses for each cup
 		int c1 = 0;
 		int c2 = 0;
 		int c3 = 0;
 
+		// Process each swap and guess
 		while(swaps != 0){
-			int a = sigma.nextInt();
-			int b = sigma.nextInt();
-			int g = sigma.nextInt();
+			int a = sigma.nextInt(); // First cup to swap
+			int b = sigma.nextInt(); // Second cup to swap
+			int g = sigma.nextInt(); // Guessed cup
+
+			// Swap the cups
 			int temp = cups[a-1];
 			cups[a-1] = cups[b-1];
 			cups[b-1] = temp;
+
+			// Increment the counter if the guess is correct
 			if(cups[g-1] == 1){
 				c1++;
 			}
@@ -48,7 +47,10 @@ public class shell {
 			b = Integer.parseInt(st.nextToken());
 			g = Integer.parseInt(st.nextToken());*/
 		}
+		// Find the maximum number of correct guesses
 		int max = Math.max(Math.max(c1,c2),c3);
+
+		// Write the result to "shell.out"
 		PrintWriter out = new PrintWriter(new FileWriter("shell.out"));
 		out.println(max);
 		out.close();

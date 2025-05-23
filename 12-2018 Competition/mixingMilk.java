@@ -1,0 +1,50 @@
+// Arup Guha
+// 2/2/2019
+// Solution to 2019 USACO January Bronze Problem: Shell Game
+
+import java.io.*;
+import java.util.*;
+
+public class mixingMilk {
+	
+	public static void main(String[] args) throws Exception {
+		
+		// Set up initial shells.
+		Scanner stdin = new Scanner(new File("mixmilk.in"));
+		System.out.println("");
+		final int c1Capacity = stdin.nextInt();
+		int c1Am = stdin.nextInt();
+		final int c2Capacity = stdin.nextInt();
+		int c2Am = stdin.nextInt();
+		final int c3Capacity = stdin.nextInt();
+		int c3Am = stdin.nextInt();
+		int[] amounts = new int[]{c1Am, c2Am, c3Am};
+		int[] capacities = {c1Capacity,c2Capacity, c3Capacity};
+		for(int i =0;i<=3;i++){
+			int test= (i%3);
+			int j = test+1;
+			if(test == 2){
+				j=0;
+			} 
+
+			
+			int dif = capacities[j]-amounts[j] ;
+			dif = Math.min(dif,amounts[test]);
+			amounts[test]-=dif;
+			amounts[j]+=dif;
+			
+			
+			}
+		PrintWriter out = new PrintWriter(new FileWriter("mixmilk.out"));
+		out.println(amounts[0]);
+		out.println(amounts[1]);
+		out.println(amounts[2]);
+		stdin.close();
+		out.close();
+		}
+		
+		
+		// Ta da!
+	
+	}
+
